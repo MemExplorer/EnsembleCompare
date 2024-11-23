@@ -4,6 +4,7 @@
     <title>Prediction App</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -17,10 +18,11 @@
         </div>
     </section>
 
-    <div class="body-container py-5 gap-5">
-        <div class="row g-0 text-center custom-cluster gap-5 pt-3">
-            <div class="text-center text-white h2">Cluster Graph and Description</div>
-            <img src="../images/clusterGraph.png" class="px-5 pb-5" alt="Cluster Graph">
+    <div class="body-container py-5 gap-3">
+        <div class="row g-0 text-center custom-div-background gap-5 px-3">
+            <div class="text-center text-white h2 pt-5">Cluster Graph of Squared Errors</div>
+            <img src="../images/clusterGraph.png" class="px-5" alt="Cluster Graph">
+            <div class="text-center text-white h2">4 Cluster Descriptions</div>
             <table class="table text-white">
                 <thead>
                   <tr>
@@ -54,9 +56,52 @@
               </table>
         </div>
 
-        <section id="prediction">
+        <div class="row g-0 custom-div-background">
+          <div class="text-center text-white h2 my-3">
+            Cluster Prediction
+          </div>
+          <div class="quiz-container">
+            <div class="quiz-content">
+              <h2 id="question-title" class="mb-3">Question 1:</h2>
+              <p id="question-description">1. What is the number of Death of children under 5 years of age per 1000 live births?</p>
+              <div class="answer-section">
+                <div class="row g-3 align-items-center">
+                  <div class="col-auto">
+                    <label for="answer-input">Answer:</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="text" class="form-control" id="answer-input" >
+                  </div>
+                </div>
+              </div>
+              <div class="navigation">
+                <button class="nav-button" id="back">
+                  <i class="fas fa-arrow-left"></i> Back
+                </button>
+                <span id="question-number" class="">1 / 9</span>
+                <button class="nav-button" id="next">
+                  Next <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>         
+            </div>
+          </div>
+        </div>
 
-        </section>
+        <div class="row g-0 custom-div-background">
+          <div class="text-center text-white h2 my-3">
+            Model Confidence Testing
+          </div>
+          <div class="row g-0 info-custom">
+            <div class="col-6 half-box">
+              
+            </div>
+            <div class="col-6 half-box">
+              
+            </div>
+          </div>
+          
+            
+        </div>
         
     </div>
     
