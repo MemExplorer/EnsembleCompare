@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction App</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Prediction App</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form method="POST" class="form-group">
-                    <div class="mb-3">
-                        <label for="input_value" class="form-label">Enter a value:</label>
-                        <input type="text" id="input_value" name="input_value" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Predict</button>
-                </form>
+    <section id="hero">
+        <div class="ss-bois-image-container">
+            <div class="centered-text">
+                <h1>Module 2 Course Assessment (PRACTICAL)</h1>
+                <h2>Country Dataset</h2>
+                <p>Made by: SS BOIS</p>
             </div>
         </div>
+    </section>
 
-        
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-6">
-                <div class="alert alert-info text-center">
-                    <h4>Prediction Result: {{ prediction }}</h4>
-                </div>
-            </div>
+    <div class="body-container py-5 gap-5">
+        <div class="row g-0 text-center custom-cluster gap-5 pt-3">
+            <div class="text-center text-white h2">Cluster Graph and Description</div>
+            <img src="../images/clusterGraph.png" class="px-5 pb-5" alt="Cluster Graph">
+            <table class="table text-white">
+                <thead>
+                  <tr>
+                    <th scope="col">Cluster</th>
+                    <th scope="col">Label</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">0</th>
+                    <td>Low-Income Developing Country with High Child Mortality and Trade Dependence                    </td>
+                    <td>A low-income developing nation facing severe health challenges, moderate trade activity, and economic instability due to high inflation and income disparities. The demographic and economic indicators suggest a country with limited healthcare infrastructure, high fertility rates, and a reliance on international trade.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Middle-Income Export-Oriented Country with Moderate Health and Trade Reliance</td>
+                    <td>A middle-income country with strong integration into global trade, moderate health outcomes, and economic challenges such as trade dependence and inflation. The country demonstrates progress in health and economic development but faces vulnerabilities linked to its reliance on imports and exports.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>High-Income Export-Driven Nation with Advanced Health and Trade Integration</td>
+                    <td>A high-income country with an advanced economy, exceptional health standards, and significant integration into global trade. The country thrives on its export-oriented economy while maintaining high living standards and a stable macroeconomic environment.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>High-Income Export-Driven Nation with Strong Health and Moderate Trade Dependence</td>
+                    <td>A high-income country with robust trade activity, strong healthcare investment, and advanced socio-economic indicators. The country benefits from a globally integrated economy and demonstrates a high standard of living with exceptional health outcomes.</td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
-        
 
+        <section id="prediction">
+
+        </section>
+        
     </div>
+    
 
     
 
