@@ -14,21 +14,82 @@
     <div class="home-section">
         <div class="container-fluid px-5 py-3">
             <div class="row">
-                <div class="col-md-5">
-                    <p class="poppins-semibold" style="font-size: 4vh; padding-top: 1vh;">Ensemble Compare</p>
-                    <p class="fs=3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue quis enim sed
-                        suscipit. Maecenas ullamcorper lorem et suscipit tincidunt. Etiam sollicitudin lorem in lorem
-                        pharetra suscipit nec sit amet elit. Phasellus porta tincidunt nibh. Duis porta accumsan porta.
-                        In dolor enim, fermentum eget tristique vulputate, tincidunt id odio. Aliquam imperdiet sem sit
-                        amet eros eleifend sodales. Vivamus congue sed dolor ut suscipit. Curabitur commodo et eros ut
-                        cursus.</p>
-                </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="poppins-semibold" style="font-size: 4vh; padding-top: 1vh;">Ensemble Compare</p>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button class="nav-button btn btn-outline-secondary" onclick="location.href='prediction.html'">
+                                Predict using Model <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p class="fs=3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue quis enim sed
+                                suscipit. Maecenas ullamcorper lorem et suscipit tincidunt. Etiam sollicitudin lorem in lorem
+                                pharetra suscipit nec sit amet elit. Phasellus porta tincidunt nibh. Duis porta accumsan porta.
+                                In dolor enim, fermentum eget tristique vulputate, tincidunt id odio. Aliquam imperdiet sem sit
+                                amet eros eleifend sodales. Vivamus congue sed dolor ut suscipit. Curabitur commodo et eros ut
+                                cursus.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    
+                
             </div>
         </div>
     </section>
 
+    <!--Cluster Graph and Description-->
+    <section>
+        <div class="row g-0 custom-div-background px-3">
+            <div class="text-center text-white h2 py-3 poppins-semibold">Cluster Graph of Squared Errors</div>
+            <img src="images/clusterGraph.png" class="px-5" alt="Cluster Graph">
+            <div class="text-center text-white h2 pt-5 pb-3 poppins-semibold">4 Cluster Descriptions</div>
+            <table class="table text-white">
+                <thead class="text-center">
+                    <tr>
+                    <th scope="col">Cluster</th>
+                    <th scope="col">Label</th>
+                    <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row" class="text-center">0</th>
+                    <td class="text-center">Low-Income Developing Country with High Child Mortality and Trade Dependence</td>
+                    <td>A low-income developing nation facing severe health challenges, moderate trade activity, and economic instability due to high inflation and income disparities. The demographic and economic indicators suggest a country with limited healthcare infrastructure, high fertility rates, and a reliance on international trade.</td>
+                    </tr>
+                    <tr>
+                    <th scope="row" class="text-center">1</th>
+                    <td class="text-center">Middle-Income Export-Oriented Country with Moderate Health and Trade Reliance</td>
+                    <td>A middle-income country with strong integration into global trade, moderate health outcomes, and economic challenges such as trade dependence and inflation. The country demonstrates progress in health and economic development but faces vulnerabilities linked to its reliance on imports and exports.</td>
+                    </tr>
+                    <tr>
+                    <th scope="row" class="text-center">2</th>
+                    <td class="text-center">High-Income Export-Driven Nation with Advanced Health and Trade Integration</td>
+                    <td>A high-income country with an advanced economy, exceptional health standards, and significant integration into global trade. The country thrives on its export-oriented economy while maintaining high living standards and a stable macroeconomic environment.</td>
+                    </tr>
+                    <tr>
+                    <th scope="row" class="text-center">3</th>
+                    <td class="text-center">High-Income Export-Driven Nation with Strong Health and Moderate Trade Dependence</td>
+                    <td>A high-income country with robust trade activity, strong healthcare investment, and advanced socio-economic indicators. The country benefits from a globally integrated economy and demonstrates a high standard of living with exceptional health outcomes.</td>
+                    </tr>
+                </tbody>
+                </table>
+    </section>
+
+
+
     <!-- Model Specs and Prediction -->
     <section class="model-section">
+
+
         <div class="container-fluid px-5 py-3">
              <div class="row">
                 <div class="col-md-6">

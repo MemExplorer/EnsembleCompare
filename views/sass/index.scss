@@ -137,4 +137,22 @@ body {
     font-weight: 600;
     font-style: normal;
   }
-  
+
+  .nav-button {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    }
+
+  .custom-div-background{
+      background-color: #042b4d;
+      margin-bottom: 100px;
+  }
+
+  .custom-row-height{
+    height: 200px;
+  }
