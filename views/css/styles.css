@@ -34,10 +34,7 @@
     background-repeat: no-repeat;
 }
 
-.custom-div-background{
-    background-color: rgba(55, 50, 53, 0.69);
-    margin-bottom: 100px;
-}
+
 
 
 .white-background{
@@ -73,20 +70,8 @@ align-items: center;
 margin-top: 70px;
 }
 
-.nav-button {
-background: #8d7422;
-color: #fff;
-border: none;
-padding: 10px 20px;
-border-radius: 15px;
-cursor: pointer;
-font-size: 16px;
-transition: background 0.3s ease;
-}
 
-.nav-button:hover {
-background: #b3942e;
-}
+
 
 
 .half-box{
