@@ -138,21 +138,82 @@ body {
     font-style: normal;
   }
 
-  .nav-button {
+  .nav-button-1 {
     color: #fff;
     padding: 10px 20px;
     border-radius: 15px;
     border-width: 3px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
     }
+
+  .nav-button-2 {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #042b4d;
+    border-color: rgb(178, 176, 176);
+    font-family: "Poppins", sans-serif;
+    }
+
 
   .custom-div-background{
       background-color: #042b4d;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
   }
 
   .custom-row-height{
     height: 200px;
   }
+
+  @keyframes bubbleEffect {
+      0% {
+          --progress: 0;
+      }
+      25% {
+        --progress: calc(var(--progress) * (1/4));
+      }
+      50% {
+        --progress: calc(var(--progress) * (2/4));
+      }
+      75% {
+        --progress: calc(var(--progress) * (3/4));
+      }
+      100% {
+          --progress: var(--progress);
+      }
+  }
+
+  .circular-progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(rgb(23, 133, 197) calc(var(--progress) * 1%), #d1d4d7 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bubbleEffect 3s ease-in-out;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.circular-progress span {
+    position: relative;
+    font-size: 2.0rem;
+    font-weight: bold;
+    z-index: 1;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
