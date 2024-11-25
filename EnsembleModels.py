@@ -1,4 +1,5 @@
 import pickle
+import numpy as np
 from sklearn.model_selection import (
     KFold,
     train_test_split,
@@ -24,9 +25,17 @@ class EnsembleModel:
     def predict(self, input):
         return self.__model_instance.predict(input)
 
+    def predict_a(self, input):
+        result = np.squeeze(self.__model_instance.predict_proba(input))
+        max_index = np.argmax(result)
+        return (
+            round(result[max_index] * 100, 2),
+            self.__model_instance.classes_[max_index],
+        )
+
     def benchmark_split(self, x_data, y_data, test_size=0.3):
         """Gets the benchmark of the model yung the split method
-        
+
         Returns
         -------
         A tuple that contains the following in order: confusion matrix, accuracy score, and kappa score
@@ -43,7 +52,7 @@ class EnsembleModel:
 
     def benchmark_kfold(self, kfold_instance, x_data, y_data):
         """Gets the benchmark of the model yung the kfold method
-        
+
         Returns
         -------
         A tuple that contains the following in order: confusion matrix, accuracy score, and kappa score
