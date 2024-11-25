@@ -85,7 +85,7 @@ def init():
         model_inst_list.append(inst)
 
     # select model with highest kappa value
-    selected_model = max(zip(model_inst_list, benchmark_list), key=lambda x: x[1][3])
+    selected_model = max(zip(model_inst_list, benchmark_list), key=lambda x: x[1][3])[0]
     return benchmark_list, selected_model
 
 
