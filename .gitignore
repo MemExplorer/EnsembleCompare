@@ -160,5 +160,5 @@ cython_debug/
 #.idea/
 .vscode/
 datasets/
-views/sass/*.css
-views/sass/*.map
+static/sass/*.css
+static/sass/*.map
