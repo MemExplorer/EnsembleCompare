@@ -8,14 +8,17 @@ app = Flask(__name__, template_folder="views", static_folder="static")
 
 # information about each tested models
 MODEL_INFO_DICT = {
-    AdaBoosting: ["Ada Boosting", "Description for Ada boosting"],
+    AdaBoosting: [
+        "Ada Boosting",
+        "Ada Boost, short for Adaptive Boosting, is a machine learning algorithm developed by Yoav Freund and Robert Schapire in 1995. It improves the performance of other learning algorithms by combining the outputs of multiple weak models into a weighted sum, creating a stronger final model. While primarily designed for binary classification, it can be extended to handle multiple classes or continuous values.",
+    ],
     BaggingClassicDecisionTree: [
         "Bagging Classic Decision Tree",
-        "Description for bagging classic decision tree",
+        "A decision tree combined with bagging improves accuracy and reduces overfitting. Bagging creates multiple decision trees by training each on a random subset of the data. The final prediction is made by averaging the results (for regression) or taking a majority vote (for classification) from all the trees. This approach makes the model more reliable and stable.",
     ],
     BaggingRandomForest: [
         "Bagging Random Forest",
-        "Description for bagging random forest",
+        "Bagging with Random Forest builds on the bagging technique by combining multiple decision trees, where each tree is trained on a random subset of the data and uses a random selection of features for splitting. The final prediction is made by averaging the results (for regression) or majority voting (for classification) from all the trees. This adds extra randomness, making the model more robust, accurate, and less prone to overfitting.",
     ],
 }
 
