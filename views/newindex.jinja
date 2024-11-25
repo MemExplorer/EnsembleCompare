@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='sass/index.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensemble Learning</title>
+
+<body>
+    <!-- Website Description -->
+    <div class="home-section">
+        <div class="container-fluid px-5 py-3">
+            <div class="row">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="poppins-semibold" style="font-size: 4vh; padding-top: 1vh;">Ensemble Compare</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <button class="nav-button-1 btn btn-outline-secondary" onclick="location.href='/prediction'">
+                            Predict using Model <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <p class="fs=3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue quis enim
+                            sed
+                            suscipit. Maecenas ullamcorper lorem et suscipit tincidunt. Etiam sollicitudin lorem in
+                            lorem
+                            pharetra suscipit nec sit amet elit. Phasellus porta tincidunt nibh. Duis porta accumsan
+                            porta.
+                            In dolor enim, fermentum eget tristique vulputate, tincidunt id odio. Aliquam imperdiet sem
+                            sit
+                            amet eros eleifend sodales. Vivamus congue sed dolor ut suscipit. Curabitur commodo et eros
+                            ut
+                            cursus.
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        </section>
+        <!-- Model Specs and Prediction -->
+        <section class="model-section">
+
+
+            <div class="container-fluid px-5 py-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Model title and description -->
+                        <div class="montserrat-600" style="font-size: 1.5em;">
+                            <label id="modelTitle" class="montserrat-600" style="font-size: 1.5em;">Lorem Ipsum Model
+                                Name</label>
+                            <p id="modelDesc" style="font-weight: 400;">Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Sed congue quis enim sed
+                                suscipit. Maecenas ullamcorper lorem et suscipit tincidunt. Etiam sollicitudin lorem in
+                                lorem
+                                pharetra suscipit nec sit amet elit. Phasellus porta tincidunt nibh. Duis porta accumsan
+                                porta.
+                                In dolor enim, fermentum eget tristique vulputate, tincidunt id odio. Aliquam imperdiet
+                                sem sit
+                                amet eros eleifend sodales. Vivamus congue sed dolor ut suscipit. Curabitur commodo et
+                                eros ut
+                                cursus.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="padding-left: 100px;">
+                        <!-- Benchmark result -->
+                        <p class="poppins-semibold" style="font-size: 3vh;">Benchmark</p>
+                        <div style="font-size: 1.2em;font-weight: 400; font-family: Montserrat;">
+                            <!-- Accuracy -->
+                            <label>Accuracy <b><span id="accuracyVal">69%</span></b></label>
+                            <div style="width: 30vw;">
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" id="progBarAccuracy" role="progressbar"
+                                        style="width: 69%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kappa -->
+                            <label>Kappa <b><span id="kappaVal">69%</span></b></label>
+                            <div style="width: 30vw;">
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar" id="progBarKappa" role="progressbar" style="width: 25%;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confusion matrix -->
+                        <label style="font-size: 1.2em;font-weight: 400; font-family: Montserrat;">Confusion
+                            Matrix</label>
+                        <div class="cf-tbl">
+                            <div class="d-flex flex-row">
+                                <div id="container">
+                                </div>
+                                <div id="legend"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radio selection of Models -->
+                <div class="d-flex justify-content-center pt-5">
+                    <div class="btn-group" role="group">
+                        {% for i, model in model_info %}
+                        <input type="radio" class="btn-check" name="btnradio" id="model{{i}}"
+                            onchange="UpdateModel{{i}}()" autocomplete="off" {% if i==0 %} checked {%endif%}>
+                        <label class="btn btn-outline-primary" for="model{{i}}">{{model[0]}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add new content below -->
+
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/confusion-matrix.js') }}"></script>
+        <script>
+            {% for i, model in model_info %}
+            {% if i == 0 %}
+                UpdateModel{{i}}();
+            {% endif %}
+            function UpdateModel{{i}}() {
+                UpdateModelInfo("{{model[0]}}", "{{model[1]}}", {{ model[2] }}, {{ model[3] }}, {{ model[4] }}, {{ model[5] }});
+            }
+            {% endfor %}
+            function ResetConfMatrix() {
+                document.getElementById("container").innerHTML = "";
+                document.getElementById("legend").innerHTML = "";
+            }
+
+            function UpdateModelInfo(title, desc, accuracy, kappa, matrix_x, matrix_y) {
+
+                ResetConfMatrix();
+                document.getElementById("modelTitle").textContent = title;
+                document.getElementById("modelDesc").textContent = desc;
+
+                let roundedAccuracy = (accuracy * 100).toFixed(2);
+                let roundedKappa = (kappa * 100).toFixed(2);
+                document.getElementById("accuracyVal").textContent = roundedAccuracy + "%";
+                document.getElementById("kappaVal").textContent = roundedKappa + "%";
+                document.getElementById("progBarAccuracy").style["width"] = roundedAccuracy + "%";
+                document.getElementById("progBarKappa").style["width"] = roundedKappa + "%";
+
+                Matrix({
+                    container: '#container',
+                    data: matrix_x,
+                    labels: matrix_y,
+                    start_color: '#ffffff',
+                    end_color: '#e67e22'
+                });
+            }
+
+        </script>
+</body>
+
+</html>

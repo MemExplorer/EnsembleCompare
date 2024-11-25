@@ -1,0 +1,217 @@
+@use "bootstrap.mods";
+@use "confusion-matrix";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+.home-section {
+    background-color: #021526;
+    color: white;
+    font-family: 'Montserrat';
+    align-content: center;
+}
+
+.model-section {
+    background-color: white;
+    color: black;
+    font-family: 'Montserrat';
+    align-content: center;
+}
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  .montserrat-600 {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .nav-button-1 {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    }
+
+  .nav-button-2 {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #042b4d;
+    border-color: rgb(178, 176, 176);
+    font-family: "Poppins", sans-serif;
+    }
+
+
+  .custom-div-background{
+      background-color: #042b4d;
+      margin-bottom: 50px;
+  }
+
+  .custom-row-height{
+    height: 200px;
+  }
+
+  @keyframes bubbleEffect {
+      0% {
+          --progress: 0;
+      }
+      25% {
+        --progress: calc(var(--progress) * (1/4));
+      }
+      50% {
+        --progress: calc(var(--progress) * (2/4));
+      }
+      75% {
+        --progress: calc(var(--progress) * (3/4));
+      }
+      100% {
+          --progress: var(--progress);
+      }
+  }
+
+  .circular-progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(rgb(23, 133, 197) calc(var(--progress) * 1%), #d1d4d7 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bubbleEffect 3s ease-in-out;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.circular-progress span {
+    position: relative;
+    font-size: 2.0rem;
+    font-weight: bold;
+    z-index: 1;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
